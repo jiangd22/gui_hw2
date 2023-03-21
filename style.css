@@ -1,0 +1,196 @@
+* {box-sizing: border-box;}
+* {text-align: left;}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+clear{
+    clear: both;
+  }
+
+main > :not(.active) {
+    display: none;
+}
+
+main > section.active {
+    display: block;
+}
+
+main{
+    margin-top: 7rem;
+    margin-left: 5%;
+    max-width: 100%;
+}
+
+header{
+    background: black;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+}
+
+header > h1{
+    margin-left: 2vw;
+    color: white;
+}
+
+#profile{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#profile > div{
+    border: solid #909090 2px;
+    position: relative;
+    display: inline;
+    margin: 0.8vw;
+    width: 40vw;
+    min-width: 25rem;
+    min-height: 7rem;
+}
+
+/* Path: style.css */
+div > h3 {
+    position: absolute;
+    top:0;
+    bottom: 4rem;
+    left: 13vw;
+    font-size: 1.8rem;   
+}
+
+div > p{
+    position: absolute;
+    top:4.4rem;
+    bottom: 4rem;
+    left: 11.5vw;
+}
+
+span {
+    background-color: lightgray;
+    border-radius: 0.9rem;
+    padding: .3rem;
+    margin: 0 .2rem;
+    color: black;
+    /* position: relative; */
+}
+
+img{
+    margin: 1.5vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+/* Path: style.css */
+
+
+button {
+    background-color: #569b84;
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
+    width: 8rem;
+    height: 2.5rem;
+    text-align: center;
+}
+
+#butt{
+    background-color: #569b84;
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: .5rem .5rem;
+}
+
+/* callender*/
+td > button {
+    width: 9rem;
+    height: 2.5rem
+}
+
+button:hover {
+    background-color: #5a9cad;
+    cursor: pointer;
+}
+
+img {
+    margin: 1.5vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+thead {
+    background-color: #999999;
+    height: 2.5rem;
+    color: white;
+}
+
+table {
+    width: 90%;
+    border-spacing: 0.2em 1.5em;
+}
+
+td {
+    border-spacing: 5px 2rem;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+td > *{
+    margin-left:1.2rem;
+}
+
+th {
+    text-align: left;
+}
+
+#bac{
+    background-color: #889db0;
+    color: white;
+    width: 2 rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Appointmment*/
+
+#appointment {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form{
+    margin-bottom: 2rem;
+}
+
+input, label, textarea {
+    display: block;
+}
+
+form input[type="text"]{
+    height: 2.5rem;
+    border: #e5e5e5 1px solid;
+}
+
+form input[type="text"],
+form textarea {
+    width: 95%;
+    padding: .4rem .6rem;
+    border: solid 1px lightgray;
+    background: white;
+}
+
+.fullScreen {
+    width: 95%; 
+    margin-bottom:1rem;
+
+}
+.gray {
+    background-color: #889db0;
+}

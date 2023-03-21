@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Recommended order for implementation: -->
+<!------------------------------------------->
+<!-- add rules to styles.css that hide all section tags under main not having a class of 'active' -->
+<!-- scheduler (js file) -->
+<!-- homeView (js file, html below & css) -->
+<!-- calendartView (js file, html below & css) -->
+<!-- appointmentView (js file, html below & css) -->
+
+<!-- Other notes -->
+<!----------------->
+<!-- To run your project in the browser, simply open Index.html with Chrome. You will need to refresh your page to see each change you make. -->
+<!-- Keep your Chrome Dev Tools open the entire time. Use the debugger feature, leverage the console to test your "app" object and be sure to watch for console errors. -->
+
+<head>
+
+  <!-- Go out to https://fonts.google.com/ and follow instructions to use font 'Source Sans Pro'-->
+  <!-- You will need to add your reference to Google's font api before your local stylesheet. -->
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">   
+
+  <script>var app;</script>
+
+  <script src="scripts/viewer.js"></script>
+  <script src="scripts/scheduler.js"></script>
+  <script src="scripts/views/calendar.js"></script>
+  <script src="scripts/views/home.js"></script>
+  <script src="scripts/views/appointment.js"></script>
+
+</head>
+
+<body onload="app.homeView.load()">
+  <header>
+    <h1>Tutoring Center</h1>
+  </header>
+  <main>
+    <!-- Add CSS that sets main > section to display none, but main > section.active to display block -->
+    
+    <section id="homeView">
+    <!-- Add container for list of profile cards (to be bound from code) -->
+    <!-- and a template of a profile card (wrapped by a selectable template tag) inside container -->
+      <h2>Our Tutors</h2>
+        <div id="profile">
+          <template id="profile-template">
+              <div>
+                <img id = "tutorImg" src = " " alt = "profile.pic"/>
+                <h3>Profile</h3>
+                <p></p>
+                <button id ="butt">View Schedule</button>
+                  <!-- <span class="buttonText">View Schedule</span> -->
+              </div>
+          </template>
+        </div>
+    </section>
+    <section id="calendarView">
+      <!-- h2 to be bound from code -->
+      <!-- Table for displaying a tutur's schedule goes here -->
+      <!-- with a row in the tbody for each day (Monday-Thursday). -->
+      <!-- Give the second column of each row an id based on the day ("Monday", "Tuesday", etc.).  -->
+      <!-- Button to return to list should call app.homeView.load() -->
+      <h2>Calendar</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td id="Monday"></td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td id="Tuesday"></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td id="Wednesday"></td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td id="Thursday"></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr/>
+      <button id = "bac" type="button" onclick="app.homeView.load()">Return To List</button>
+    </section>
+    <section id="appointmentView">
+      <!-- Form to collect name (input) and notes (textarea) goes here -->
+      <!-- Cancel button calls app.homeView.load() -->
+      <!-- Book button calls app.appointmentView.save() -->
+      <h1>Book Appointment</h1>
+      <form> 
+        <label for="author">Name</label>
+        <br/>
+        <input type="text" id="author" name="author"></input>
+        <br/>
+        <label for="messg">Notes</label>
+        <br/>
+        <textarea id="messg" name="messg" rows="10" cols ="75"></textarea>
+      </form>
+      <br/>
+      <button id = "Cancel" type="button" class = "fullScreen gray" onclick="app.homeView.load()">Cancel</button>
+      <br/>
+      <button id = "Book" type="button" class = "fullScreen" onclick="app.appointmentView.save()">Book</button>
+    </section>
+  </main>
+</body>
+</html>
